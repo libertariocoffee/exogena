@@ -1,0 +1,1072 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!--Inicio de campos genéricos-->
+
+        <record id="l10n_co_exogenous_format_field_cpt" model="l10n_co.exogenous_format_field">
+            <field name="name">Concepto</field>
+            <field name="sequence" eval="1"/>
+            <field name="max_length" eval="4"/>
+            <field name="attribute">cpt</field>
+            <field name="source">resolution</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1001')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1003')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1005')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1007')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1008')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1009')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1011')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1012'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="is_unique_key" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+        <record id="l10n_co_exogenous_format_field_tdoc" model="l10n_co.exogenous_format_field">
+            <field name="name">Tipo de documento</field>
+            <field name="sequence" eval="2"/>
+            <field name="max_length" eval="2"/>
+            <field name="attribute">tdoc</field>
+            <field name="source">contact</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1001')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1003')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1005')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1006')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1007')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1008')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1009')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1010')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1012')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="is_unique_key" eval="True"/>
+            <field name="field_odoo_id" ref="l10n_latam_base.field_res_partner__l10n_latam_identification_type_id"/>
+            <field name="field_odoo_internal_id" ref="l10n_co.field_l10n_latam_identification_type__l10n_co_document_code"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+        <record id="l10n_co_exogenous_format_field_nid" model="l10n_co.exogenous_format_field">
+            <field name="name">Número identificación</field>
+            <field name="sequence" eval="3"/>
+            <field name="max_length" eval="20"/>
+            <field name="attribute">nid</field>
+            <field name="source">contact</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1001')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1003')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1005')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1006')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1007')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1008')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1009')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1010')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1012')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="is_unique_key" eval="True"/>
+            <field name="field_odoo_id" ref="l10n_latam_base.field_res_partner__vat"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+        <record id="l10n_co_exogenous_format_field_dv" model="l10n_co.exogenous_format_field">
+            <field name="name">Digito de Verificación</field>
+            <field name="sequence" eval="4"/>
+            <field name="max_length" eval="1"/>
+            <field name="attribute">dv</field>
+            <field name="source">contact</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1003')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1005')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1006')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1008')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1009')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1010')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1012'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="applies_to_contact" eval="False"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+        <record id="l10n_co_exogenous_format_field_apl1" model="l10n_co.exogenous_format_field">
+            <field name="name">Primer apellido del informado</field>
+            <field name="sequence" eval="5"/>
+            <field name="max_length" eval="60"/>
+            <field name="attribute">apl1</field>
+            <field name="source">contact</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1001')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1003')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1005')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1006')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1007')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1008')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1009')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1010')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1012')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="applies_to_company" eval="False"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+        <record id="l10n_co_exogenous_format_field_apl2" model="l10n_co.exogenous_format_field">
+            <field name="name">Segundo apellido del informado</field>
+            <field name="sequence" eval="6"/>
+            <field name="max_length" eval="60"/>
+            <field name="attribute">apl2</field>
+            <field name="source">contact</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1001')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1003')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1005')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1006')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1007')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1008')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1009')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1010')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1012')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="applies_to_company" eval="False"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+        <record id="l10n_co_exogenous_format_field_nom1" model="l10n_co.exogenous_format_field">
+            <field name="name">Primer nombre del informado</field>
+            <field name="sequence" eval="7"/>
+            <field name="max_length" eval="60"/>
+            <field name="attribute">nom1</field>
+            <field name="source">contact</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1001')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1003')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1005')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1006')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1007')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1008')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1009')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1010')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1012')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="applies_to_company" eval="False"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+        <record id="l10n_co_exogenous_format_field_nom2" model="l10n_co.exogenous_format_field">
+            <field name="name">Otros nombres del informado</field>
+            <field name="sequence" eval="8"/>
+            <field name="max_length" eval="60"/>
+            <field name="attribute">nom2</field>
+            <field name="source">contact</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1001')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1003')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1005')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1006')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1007')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1008')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1009')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1010')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1012')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="applies_to_company" eval="False"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+        <record id="l10n_co_exogenous_format_field_raz" model="l10n_co.exogenous_format_field">
+            <field name="name">Razón social informado</field>
+            <field name="sequence" eval="9"/>
+            <field name="max_length" eval="450"/>
+            <field name="attribute">raz</field>
+            <field name="source">contact</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1001')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1003')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1005')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1006')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1007')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1008')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1009')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1010')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1012'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="field_odoo_id" ref="base.field_res_partner__name"/>
+            <field name="applies_to_contact" eval="False"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+        <record id="l10n_co_exogenous_format_field_dir" model="l10n_co.exogenous_format_field">
+            <field name="name">Dirección</field>
+            <field name="sequence" eval="10"/>
+            <field name="max_length" eval="200"/>
+            <field name="attribute">dir</field>
+            <field name="source">contact</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1001')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1003')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1008')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1009')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1010')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="field_odoo_id" ref="base.field_res_partner__street"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+        <record id="l10n_co_exogenous_format_field_dpto" model="l10n_co.exogenous_format_field">
+            <field name="name">Código departamento</field>
+            <field name="sequence" eval="11"/>
+            <field name="max_length" eval="2"/>
+            <field name="attribute">dpto</field>
+            <field name="source">contact</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1001')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1003')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1008')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1009')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1010')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="field_odoo_id" ref="base.field_res_partner__state_id"/>
+            <field name="field_odoo_internal_id" ref="base.field_res_country_state__id"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+        <record id="l10n_co_exogenous_format_field_mun" model="l10n_co.exogenous_format_field">
+            <field name="name">Código municipio</field>
+            <field name="sequence" eval="12"/>
+            <field name="max_length" eval="3"/>
+            <field name="attribute">mun</field>
+            <field name="source">contact</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1001')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1008')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1009')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1010')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+        <record id="l10n_co_exogenous_format_field_1003_mcpo" model="l10n_co.exogenous_format_field">
+            <field name="name">Código municipio</field>
+            <field name="sequence" eval="12"/>
+            <field name="max_length" eval="3"/>
+            <field name="attribute">mcpo</field>
+            <field name="source">contact</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1003'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+        <record id="l10n_co_exogenous_format_field_pais" model="l10n_co.exogenous_format_field">
+            <field name="name">País de Residencia o domicilio</field>
+            <field name="sequence" eval="13"/>
+            <field name="max_length" eval="4"/>
+            <field name="attribute">pais</field>
+            <field name="source">contact</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1001')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1007')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1008')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1009')),
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1010')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1012')), 
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="field_odoo_id" ref="base.field_res_partner__country_id"/>
+            <field name="field_odoo_internal_id" ref="base.field_res_country__code"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <!--Fin de campos genéricos-->
+
+
+        <!--Inicio de campos para el formato 1001-->
+        <record id="l10n_co_exogenous_format_field_1001_pago" model="l10n_co.exogenous_format_field">
+            <field name="name">Pago o abono en cuenta deducible</field>
+            <field name="sequence" eval="14"/>
+            <field name="attribute">pago</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1001'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_1001_pnded" model="l10n_co.exogenous_format_field">
+            <field name="name">Pago o abono en cuenta NO deducible</field>
+            <field name="sequence" eval="15"/>
+            <field name="attribute">pnded</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1001'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_1001_ided" model="l10n_co.exogenous_format_field">
+            <field name="name">IVA mayor valor del costo o gasto deducible</field>
+            <field name="sequence" eval="16"/>
+            <field name="attribute">ided</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1001'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_1001_inded" model="l10n_co.exogenous_format_field">
+            <field name="name">IVA mayor valor del costo o gasto no deducible</field>
+            <field name="sequence" eval="17"/>
+            <field name="attribute">inded</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1001'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_1001_retp" model="l10n_co.exogenous_format_field">
+            <field name="name">Retención en la fuente practicada Renta</field>
+            <field name="sequence" eval="18"/>
+            <field name="attribute">rtfte</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1001'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_1001_reta" model="l10n_co.exogenous_format_field">
+            <field name="name">Retención en la fuente asumida Renta</field>
+            <field name="sequence" eval="19"/>
+            <field name="attribute">reta</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1001'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_1001_comun" model="l10n_co.exogenous_format_field">
+            <field name="name">Retención en la fuente practicada IVA a responsables del IVA</field>
+            <field name="sequence" eval="20"/>
+            <field name="attribute">comun</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1001'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_1001_ndom" model="l10n_co.exogenous_format_field">
+            <field name="name">Retención en la fuente practicada IVA a no residentes o no domiciliados</field>
+            <field name="sequence" eval="21"/>
+            <field name="attribute">ndom</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1001'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <!--Fin de campos para el formato 1001-->
+        <!--Inicio de campos para el formato 1003-->
+        <record id="l10n_co_exogenous_format_field_1003_valor" model="l10n_co.exogenous_format_field">
+            <field name="name">Valor acumulado del pago o abono sujeto a Retención en la fuente</field>
+            <field name="sequence" eval="22"/>
+            <field name="attribute">valor</field>
+            <field name="max_length" eval="20"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1003'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_1003_ret" model="l10n_co.exogenous_format_field">
+            <field name="name">Retención en la fuente que le practicaron</field>
+            <field name="sequence" eval="23"/>
+            <field name="attribute">ret</field>
+            <field name="max_length" eval="20"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1003'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <!--Fin de campos para el formato 1003-->
+        <!--Inicio de campos para el formato 1005-->
+        <record id="l10n_co_exogenous_format_field_1005_vimp" model="l10n_co.exogenous_format_field">
+            <field name="name">Impuesto descontable</field>
+            <field name="sequence" eval="24"/>
+            <field name="attribute">vimp</field>
+            <field name="max_length" eval="20"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1005'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="format_applies_concepts" eval="False"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_1005_ivade" model="l10n_co.exogenous_format_field">
+            <field name="name">IVA resultante por devoluciones en ventas anuladas, rescindidas o resueltas</field>
+            <field name="sequence" eval="25"/>
+            <field name="attribute">ivade</field>
+            <field name="max_length" eval="20"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1005'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="format_applies_concepts" eval="False"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_1005_ivavcg" model="l10n_co.exogenous_format_field">
+            <field name="name">IVA resultante por devoluciones en ventas anuladas, rescindidas o resueltas (Ajuste/Costo Gasto)</field>
+            <field name="sequence" eval="26"/>
+            <field name="attribute">ivavcg</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1005'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="format_applies_concepts" eval="False"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>   
+        <!--Fin de campos para el formato 1005-->
+        <!--Inicio de campos para el formato 1006-->
+        <record id="l10n_co_exogenous_format_field_1006_imp" model="l10n_co.exogenous_format_field">
+            <field name="name">Impuesto generado</field>
+            <field name="sequence" eval="26"/>
+            <field name="attribute">imp</field>
+            <field name="max_length" eval="20"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1006'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="format_applies_concepts" eval="False"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_1006_iva" model="l10n_co.exogenous_format_field">
+            <field name="name">IVA recuperado en devoluciones en compras anuladas, rescindidas o resueltas</field>
+            <field name="sequence" eval="27"/>
+            <field name="attribute">iva</field>
+            <field name="max_length" eval="20"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1006'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="format_applies_concepts" eval="False"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_1006_icon" model="l10n_co.exogenous_format_field">
+            <field name="name">Impuesto nacional al consumo</field>
+            <field name="sequence" eval="28"/>
+            <field name="attribute">icon</field>
+            <field name="max_length" eval="20"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1006'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="format_applies_concepts" eval="False"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>   
+        <!--Fin de campos para el formato 1006-->
+        <!--Inicio de campos para el formato 1007-->
+        <record id="l10n_co_exogenous_format_field_1007_ibru" model="l10n_co.exogenous_format_field">
+            <field name="name">Ingresos brutos recibidos</field>
+            <field name="sequence" eval="29"/>
+            <field name="attribute">ibru</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1007'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_1007_dred" model="l10n_co.exogenous_format_field">
+            <field name="name">Devoluciones, rebajas y descuentos</field>
+            <field name="sequence" eval="30"/>
+            <field name="attribute">dred</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1007'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <!--Fin de campos para el formato 1007-->
+        <!--Inicio de campos para el formato 1008-->
+        <record id="l10n_co_exogenous_format_field_1008_sal" model="l10n_co.exogenous_format_field">
+            <field name="name">Saldo cuentas por Cobrar al 31 de diciembre</field>
+            <field name="sequence" eval="31"/>
+            <field name="attribute">sal</field>
+            <field name="max_length" eval="20"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1008'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <!--Fin de campos para el formato 1008-->
+        <!--Inicio de campos para el formato 1009-->
+        <record id="l10n_co_exogenous_format_field_1009_sal" model="l10n_co.exogenous_format_field">
+            <field name="name">Saldo cuentas por Pagar al 31 de diciembre</field>
+            <field name="sequence" eval="32"/>
+            <field name="attribute">sal</field>
+            <field name="max_length" eval="20"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1009'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <!--Fin de campos para el formato 1009-->
+        <!--Inicio de campos para el formato 1010-->
+        <record id="l10n_co_exogenous_format_field_1010_valnom" model="l10n_co.exogenous_format_field">
+            <field name="name">Valor nominal de la acción, aporte o derecho social a diciembre 31</field>
+            <field name="sequence" eval="33"/>
+            <field name="attribute">valnom</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1010'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="format_applies_concepts" eval="False"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_1010_valpri" model="l10n_co.exogenous_format_field">
+            <field name="name">Valor prima en colocación de acciones a diciembre 31</field>
+            <field name="sequence" eval="34"/>
+            <field name="attribute">valpri</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1010'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="format_applies_concepts" eval="False"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <!--Fin de campos para el formato 1010-->
+        <!--Inicio de campos para el formato 1011-->
+        <record id="l10n_co_exogenous_format_field_1011_sal" model="l10n_co.exogenous_format_field">
+            <field name="name">Saldos al 31 de diciembre</field>
+            <field name="sequence" eval="35"/>
+            <field name="attribute">sal</field>
+            <field name="max_length" eval="20"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1011'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <!--Fin de campos para el formato 1011-->
+        <!--Inicio de campos para el formato 1012-->
+        <record id="l10n_co_exogenous_format_field_1012_ide" model="l10n_co.exogenous_format_field">
+            <field name="name">Identificación del declarante</field>
+            <field name="sequence" eval="33"/>
+            <field name="attribute">ide</field>
+            <field name="max_length" eval="20"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_1012'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <!--Fin de campos para el formato 1012-->
+        <!--Inicio de campos para el formato 2276-->
+        <record id="l10n_co_exogenous_format_field_2276_entinfo" model="l10n_co.exogenous_format_field">
+            <field name="name">Entidad Informante</field>
+            <field name="sequence" eval="36"/>
+            <field name="attribute">entinfo</field>
+            <field name="source">resolution</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="is_unique_key" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_tdocb" model="l10n_co.exogenous_format_field">
+            <field name="name">Tipo de documento beneficiario</field>
+            <field name="sequence" eval="11"/>
+            <field name="attribute">tdocb</field>
+            <field name="max_length" eval="2"/>
+            <field name="source">contact</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="is_unique_key" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_nitb" model="l10n_co.exogenous_format_field">
+            <field name="name">Número de Identificación del beneficiario</field>
+            <field name="sequence" eval="12"/>
+            <field name="attribute">nitb</field>
+            <field name="max_length" eval="20"/>
+            <field name="source">contact</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="is_unique_key" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_pasa" model="l10n_co.exogenous_format_field">
+            <field name="name">Pagos por salarios</field>
+            <field name="sequence" eval="37"/>
+            <field name="attribute">pasa</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_paec" model="l10n_co.exogenous_format_field">
+            <field name="name">Pagos por emolumentos eclesiásticos</field>
+            <field name="sequence" eval="38"/>
+            <field name="attribute">paec</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_pabop" model="l10n_co.exogenous_format_field">
+            <field name="name">Pagos realizados con bonos electrónicos o de papel</field>
+            <field name="sequence" eval="39"/>
+            <field name="attribute">pabop</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_vaex" model="l10n_co.exogenous_format_field">
+            <field name="name">Valor exceso pagos alimentación mayor a 41 UVT</field>
+            <field name="sequence" eval="40"/>
+            <field name="attribute">vaex</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_paho" model="l10n_co.exogenous_format_field">
+            <field name="name">Pagos por honorarios</field>
+            <field name="sequence" eval="41"/>
+            <field name="attribute">paho</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_pase" model="l10n_co.exogenous_format_field">
+            <field name="name">Pagos por servicios</field>
+            <field name="sequence" eval="42"/>
+            <field name="attribute">pase</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_paco" model="l10n_co.exogenous_format_field">
+            <field name="name">Pagos por comisiones</field>
+            <field name="sequence" eval="43"/>
+            <field name="attribute">paco</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_papre" model="l10n_co.exogenous_format_field">
+            <field name="name">Pagos por prestaciones sociales</field>
+            <field name="sequence" eval="44"/>
+            <field name="attribute">papre</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_pavia" model="l10n_co.exogenous_format_field">
+            <field name="name">Pagos por viáticos</field>
+            <field name="sequence" eval="45"/>
+            <field name="attribute">pavia</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_paga" model="l10n_co.exogenous_format_field">
+            <field name="name">Pagos por gastos de representación</field>
+            <field name="sequence" eval="46"/>
+            <field name="attribute">paga</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_patra" model="l10n_co.exogenous_format_field">
+            <field name="name">Pagos compensaciones trabajo asociado cooperativo</field>
+            <field name="sequence" eval="47"/>
+            <field name="attribute">patra</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_apecofpe" model="l10n_co.exogenous_format_field">
+            <field name="name">Apoyos económicos educativos financiados por el Estado</field>
+            <field name="sequence" eval="48"/>
+            <field name="attribute">apecofpe</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_potro" model="l10n_co.exogenous_format_field">
+            <field name="name">Otros pagos</field>
+            <field name="sequence" eval="49"/>
+            <field name="attribute">potro</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_cein" model="l10n_co.exogenous_format_field">
+            <field name="name">Cesantías e intereses pagadas al empleado</field>
+            <field name="sequence" eval="50"/>
+            <field name="attribute">cein</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_ceco" model="l10n_co.exogenous_format_field">
+            <field name="name">Cesantías consignadas al fondo</field>
+            <field name="sequence" eval="51"/>
+            <field name="attribute">ceco</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_auce" model="l10n_co.exogenous_format_field">
+            <field name="name">Auxilio de cesantías reconocido (Régimen tradicional)</field>
+            <field name="sequence" eval="52"/>
+            <field name="attribute">auce</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_peju" model="l10n_co.exogenous_format_field">
+            <field name="name">Pensiones de jubilación, vejez o invalidez</field>
+            <field name="sequence" eval="53"/>
+            <field name="attribute">peju</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_tingbtp" model="l10n_co.exogenous_format_field">
+            <field name="name">Total Ingresos brutos (Rentas de trabajo y pensión)</field>
+            <field name="sequence" eval="54"/>
+            <field name="attribute">tingbtp</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_apos" model="l10n_co.exogenous_format_field">
+            <field name="name">Aportes obligatorios por salud</field>
+            <field name="sequence" eval="55"/>
+            <field name="attribute">apos</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_apof" model="l10n_co.exogenous_format_field">
+            <field name="name">Aportes obligatorios a fondos de pensiones</field>
+            <field name="sequence" eval="56"/>
+            <field name="attribute">apof</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_aprais" model="l10n_co.exogenous_format_field">
+            <field name="name">Aportes voluntarios al RAIS</field>
+            <field name="sequence" eval="57"/>
+            <field name="attribute">aprais</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_apov" model="l10n_co.exogenous_format_field">
+            <field name="name">Aportes voluntarios a fondos de pensiones voluntarias</field>
+            <field name="sequence" eval="58"/>
+            <field name="attribute">apov</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_apafc" model="l10n_co.exogenous_format_field">
+            <field name="name">Aportes a cuentas AFC</field>
+            <field name="sequence" eval="59"/>
+            <field name="attribute">apafc</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_apavc" model="l10n_co.exogenous_format_field">
+            <field name="name">Aportes a cuentas AVC</field>
+            <field name="sequence" eval="60"/>
+            <field name="attribute">apavc</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_vare" model="l10n_co.exogenous_format_field">
+            <field name="name">Valor de las Retenciones en la fuente (Trabajo/Pensiones)</field>
+            <field name="sequence" eval="61"/>
+            <field name="attribute">vare</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_ivav" model="l10n_co.exogenous_format_field">
+            <field name="name">IVA mayor valor del costo o gasto</field>
+            <field name="sequence" eval="62"/>
+            <field name="attribute">ivav</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_rfiva" model="l10n_co.exogenous_format_field">
+            <field name="name">Retención en la fuente a título de IVA</field>
+            <field name="sequence" eval="63"/>
+            <field name="attribute">rfiva</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_pagahuvt" model="l10n_co.exogenous_format_field">
+            <field name="name">Pagos por alimentación hasta 41 UVT</field>
+            <field name="sequence" eval="64"/>
+            <field name="attribute">pagahuvt</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_vilap" model="l10n_co.exogenous_format_field">
+            <field name="name">Valor ingreso laboral promedio (últimos 6 meses)</field>
+            <field name="sequence" eval="65"/>
+            <field name="attribute">vilap</field>
+            <field name="max_length" eval="18"/>
+            <field name="source">journal_items</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_tdocde" model="l10n_co.exogenous_format_field">
+            <field name="name">Tipo de documento dependiente económico</field>
+            <field name="sequence" eval="66"/>
+            <field name="attribute">tdocde</field>
+            <field name="max_length" eval="2"/>
+            <field name="source">contact</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_nitde" model="l10n_co.exogenous_format_field">
+            <field name="name">Número de Identificación dependiente económico</field>
+            <field name="sequence" eval="67"/>
+            <field name="attribute">nitde</field>
+            <field name="max_length" eval="20"/>
+            <field name="source">contact</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_identfc" model="l10n_co.exogenous_format_field">
+            <field name="name">Identificación del fideicomiso o contrato</field>
+            <field name="sequence" eval="68"/>
+            <field name="attribute">identfc</field>
+            <field name="max_length" eval="14"/>
+            <field name="source">contact</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="is_unique_key" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_tdocpcc" model="l10n_co.exogenous_format_field">
+            <field name="name">Tipo documento participante contrato colaboración</field>
+            <field name="sequence" eval="69"/>
+            <field name="attribute">tdocpcc</field>
+            <field name="max_length" eval="2"/>
+            <field name="source">contact</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="is_unique_key" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_format_field_2276_nitpcc" model="l10n_co.exogenous_format_field">
+            <field name="name">Identificación participante contrato colaboración</field>
+            <field name="sequence" eval="70"/>
+            <field name="attribute">nitpcc</field>
+            <field name="max_length" eval="20"/>
+            <field name="source">contact</field>
+            <field name="format_ids" eval="[
+                (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_format_2276'))]"
+            />
+            <field name="active" eval="True"/>
+            <field name="is_unique_key" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <!--Fin de campos para el formato 2276-->
+    </data>
+</odoo>

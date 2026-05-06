@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="l10n_co_exogenous_document_type_table_view_search" model="ir.ui.view">
+        <field name="name">l10n.co.exogenous.document.type.table.view.search</field>
+        <field name="model">l10n_co.exogenous_document_type_table</field>
+        <field name="arch" type="xml">
+            <search string="Buscar tabla de tipos de documento">
+                <field name="name"/>
+                <filter string="Archivado" name="inactive" domain="[('active','=', False)]"/>
+                <group expand="1" string="Agrupar por">
+                    <filter string="Compañía" name="company_id" context="{'group_by': 'company_id'}" groups="base.group_multi_company"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="l10n_co_exogenous_document_type_table_view_form" model="ir.ui.view">
+        <field name="name">l10n.co.exogenous.document.type.table.view.form</field>
+        <field name="model">l10n_co.exogenous_document_type_table</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Tabla de tipos de documento" create="false" delete="false">
+                <sheet>
+                    <div name="button_box" class="oe_button_box"/>
+                    <widget name="web_ribbon" title="Archivado" bg_color="bg-danger" invisible="active == True"/>
+                    <div class="oe_title" name="l10n_co_exogenous_document_type_table_title">
+                        <label for="name" id="l10n_co_exogenous_document_type_table_title"/>
+                        <h1>
+                            <field name="name" placeholder="p. ej. Sitio web" class="d-block" required="1"/>
+                            <field name="active" invisible="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group name="info_left">
+                            <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="l10n_co_exogenous_document_type_table_view_tree" model="ir.ui.view">
+        <field name="name">l10n.co.exogenous.document.type.table.view.tree</field>
+        <field name="model">l10n_co.exogenous_document_type_table</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Tablas de tipos de documento" create="false" delete="false">
+                <field name="name"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="l10n_co_exogenous_document_type_table_action" model="ir.actions.act_window">
+        <field name="name">Tablas de tipos de documento</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">l10n_co.exogenous_document_type_table</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cree su tabla de tipos de documento aquí.
+            </p>
+        </field>
+    </record>
+
+</odoo>

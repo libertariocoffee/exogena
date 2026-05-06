@@ -1,0 +1,214 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="l10n_co_exogenous_format_setting_view_search" model="ir.ui.view">
+        <field name="name">l10n.co.exogenous.format.setting.view.search</field>
+        <field name="model">l10n_co.exogenous_format_setting</field>
+        <field name="arch" type="xml">
+            <search string="Buscar formato">
+                <field name="format_id"/>
+                <filter string="Archivado" name="inactive" domain="[('active','=', False)]"/>
+                <group expand="1" string="Agrupar por">
+                    <filter string="Compañía" name="company_id" context="{'group_by': 'company_id'}" groups="base.group_multi_company"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="l10n_co_exogenous_format_setting_view_form" model="ir.ui.view">
+        <field name="name">l10n.co.exogenous.format.setting.view.form</field>
+        <field name="model">l10n_co.exogenous_format_setting</field>
+        <field name="type">form</field>
+        <field name="priority" eval="1"/>
+        <field name="arch" type="xml">
+            <form string="Formato">
+                <sheet>
+                    <div name="button_box" class="oe_button_box"/>
+                    <widget name="web_ribbon" title="Archivado" bg_color="bg-danger" invisible="active == True"/>
+                    <group>
+                        <group name="info_left">
+                            <field name="format_id" required="1"/>
+                            <field name="apply_concepts" invisible="1"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Campos de formato" name="page_format_concepts">
+                            <field name="format_setting_line_ids" context="{'format_id': format_id}">
+                                <tree string="Campos de formato" editable="bottom">
+                                    <field name="format_field_id" required="1" domain="[('format_ids', '=', context.get('format_id')), ('source', '=', 'journal_items')]"/>
+                                    <field name="format_setting_id" column_invisible="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Configuración" name="page_configuration">
+                            <group string="Configuración de Cuantías Menores">
+                                <group>
+                                    <field name="smaller_amount_document_type"/>
+                                    <field name="smaller_amount_nit"/>
+                                </group>
+                                <group>
+                                    <field name="smaller_amount_name"/>
+                                    <field name="no_partner_name"/>
+                                </group>
+                            </group>
+                            <group string="Configuración de Saldo de Cierre">
+                                <group>
+                                    <field name="closing_balance_method"/>
+                                </group>
+                                <group>
+                                    <field name="asset_account_prefixes" invisible="closing_balance_method == 'asset_liability'"/>
+                                    <field name="liability_account_prefixes" invisible="closing_balance_method == 'asset_liability'"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="l10n_co_exogenous_format_setting_view_tree" model="ir.ui.view">
+        <field name="name">l10n.co.exogenous.format.setting.view.tree</field>
+        <field name="model">l10n_co.exogenous_format_setting</field>
+        <field name="type">tree</field>
+        <field name="priority" eval="1"/>
+        <field name="arch" type="xml">
+            <tree string="Formatos">
+                <field name="format_id"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="l10n_co_exogenous_format_setting_action" model="ir.actions.act_window">
+        <field name="name">Formatos</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">l10n_co.exogenous_format_setting</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cree sus formatos aquí.
+            </p>
+        </field>
+    </record>
+
+    <record id="l10n_co_exogenous_format_setting_generate_view_form" model="ir.ui.view">
+        <field name="name">l10n.co.exogenous.format.setting.generate.view.form</field>
+        <field name="model">l10n_co.exogenous_format_setting</field>
+        <field name="type">form</field>
+        <field name="priority" eval="100"/>
+        <field name="arch" type="xml">
+            <form string="Formato" create="false" delete="false">
+                <sheet>
+                    <div name="button_box" class="oe_button_box">
+                        <button class="oe_stat_button" icon="fa-file-excel-o" name="generate_and_download_report" string="Generar y descargar reporte" type="object"/>
+                    </div>
+                    <group name="group_one" invisible="is_it_with_date_range == False">
+                        <group name="info_right">
+                            <field name="date_start" required="is_it_with_date_range == True" invisible="is_it_with_date_range == False"/>
+                        </group>
+                        <group name="info_left">
+                            <field name="date_end" required="is_it_with_date_range == True" invisible="is_it_with_date_range == False"/>
+                        </group>
+                    </group>
+                    <group name="group_two">
+                        <group name="info_left">
+                            <field name="journal_ids" widget="many2many_tags"/>
+                            <field name="partner_ids" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                    <group name="group_three">
+                        <group name="info_left">
+                            <field name="format_id" readonly="1"/>
+                            <field name="apply_concepts" invisible="1"/>
+                            <field name="is_it_with_date_range" invisible="1"/>
+                        </group>
+                    </group>
+                    <group name="group_four">
+                        <group name="info_left">
+                            <field name="binary_file" readonly="1" widget="binary" filename="binary_file_name" invisible="binary_file == False"/>
+                            <field name="binary_file_name" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Campos de formato" name="page_format_fields">
+                            <field name="format_setting_line_ids" readonly="1">
+                                <tree string="Campos de formato" editable="bottom">
+                                    <field name="format_field_id"/>
+                                    <field name="format_setting_id" invisible="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Configuración" name="page_configuration">
+                            <group string="Configuración de Cuantías Menores">
+                                <group>
+                                    <field name="smaller_amount_document_type"/>
+                                    <field name="smaller_amount_nit"/>
+                                </group>
+                                <group>
+                                    <field name="smaller_amount_name"/>
+                                    <field name="no_partner_name"/>
+                                </group>
+                            </group>
+                            <group string="Configuración de Saldo de Cierre">
+                                <group>
+                                    <field name="closing_balance_method"/>
+                                </group>
+                                <group>
+                                    <field name="asset_account_prefixes" invisible="closing_balance_method == 'asset_liability'"/>
+                                    <field name="liability_account_prefixes" invisible="closing_balance_method == 'asset_liability'"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="l10n_co_exogenous_format_setting_generate_view_tree" model="ir.ui.view">
+        <field name="name">l10n.co.exogenous.format.setting.generate.view.tree</field>
+        <field name="model">l10n_co.exogenous_format_setting</field>
+        <field name="type">tree</field>
+        <field name="priority" eval="100"/>
+        <field name="arch" type="xml">
+            <tree string="Formatos" create="false" delete="false">
+                <field name="format_id"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="l10n_co_exogenous_format_generate_action" model="ir.actions.act_window">
+        <field name="name">Generar archivo de formato</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">l10n_co.exogenous_format_setting</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="l10n_co_exogenous_format_setting_view_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cree sus formatos aquí.
+            </p>
+        </field>
+    </record>
+
+    <record id="action_l10n_co_exogenous_format_setting_generate_view_tree" model="ir.actions.act_window.view">
+        <field name="act_window_id" ref="l10n_co_exogenous_format_generate_action"/>
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="l10n_co_exogenous_format_setting_generate_view_tree"/>
+    </record>
+
+    <record id="action_l10n_co_exogenous_format_setting_generate_view_form" model="ir.actions.act_window.view">
+        <field name="act_window_id" ref="l10n_co_exogenous_format_generate_action"/>
+        <field name="sequence" eval="2"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="l10n_co_exogenous_format_setting_generate_view_form"/>
+    </record>
+
+</odoo>

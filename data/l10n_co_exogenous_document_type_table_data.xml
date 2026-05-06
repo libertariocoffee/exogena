@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="l10n_co_exogenous_document_type_table_one" model="l10n_co.exogenous_document_type_table">
+            <field name="name">Tabla 1. Tipos de Documento</field>
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_document_type_table_two" model="l10n_co.exogenous_document_type_table">
+            <field name="name">Tabla 2. Tipos de Documento</field>
+            <field name="active" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+    </data>
+</odoo>

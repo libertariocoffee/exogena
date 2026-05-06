@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <menuitem id="menu_l10n_co_exogenous_information_reporting_root"
+            name="Información exógena"
+            web_icon="l10n_co_exogenous_information_reporting,static/description/icon.png"
+            groups="account.group_account_manager"
+            sequence="70">
+
+        <menuitem id="menu_l10n_co_exogenous_format_generate"
+            name="Generar reportes"
+            sequence="1"
+            groups="account.group_account_manager">
+
+            <menuitem id="submenu_l10n_co_exogenous_format_generate"
+                name="Generar y descargar"
+                action="l10n_co_exogenous_format_generate_action"
+                sequence="1"/>
+
+        </menuitem>
+
+        <menuitem id="menu_l10n_co_exogenous_information_reporting_settings"
+            name="Configuración"
+            sequence="100"
+            groups="account.group_account_manager">
+
+            <menuitem id="submenu_l10n_co_exogenous_information_reporting_format_settings"
+                name="Formato"
+                sequence="2"
+                groups="account.group_account_manager">
+
+                <menuitem id="menu_l10n_co_exogenous_format"
+                    name="Formatos"
+                    action="l10n_co_exogenous_format_action"
+                    sequence="1"/>
+
+                <menuitem id="menu_l10n_co_exogenous_format_setting"
+                    name="Configuración de formatos"
+                    action="l10n_co_exogenous_format_setting_action"
+                    sequence="2"/>
+
+            </menuitem>
+
+            <menuitem id="submenu_l10n_co_exogenous_information_reporting_format_genral_settings"
+                name="Generales"
+                sequence="3"
+                groups="account.group_account_manager">
+
+                <menuitem id="menu_l10n_co_exogenous_document_type_table"
+                    name="Tablas de tipos de documento"
+                    action="l10n_co_exogenous_document_type_table_action"
+                    sequence="1"/>
+
+                <menuitem id="menu_l10n_co_exogenous_document_type"
+                    name="Tipos de documento"
+                    action="l10n_co_exogenous_document_type_action"
+                    sequence="2"/>
+
+                <menuitem id="menu_l10n_co_exogenous_concept"
+                    name="Conceptos"
+                    action="l10n_co_exogenous_concept_action"
+                    sequence="3"/>
+
+                <menuitem id="menu_l10n_co_exogenous_format_field"
+                    name="Campos de formato de información exógena"
+                    action="l10n_co_exogenous_format_field_action"
+                    sequence="4"/>
+            </menuitem>
+
+
+        </menuitem>
+
+    </menuitem>
+</odoo>

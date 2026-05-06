@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="l10n_co_exogenous_contact_field_view_form" model="ir.ui.view">
+        <field name="name">l10n.co.exogenous.contact.field.view.form</field>
+        <field name="model">l10n_co.exogenous_contact_field</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group name="info_right">
+                            <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Campos de contacto" name="page_contact_fields">
+                            <field name="field_line_ids" required="1">
+                                <tree string="Campos de contacto" editable="bottom">
+                                    <field name="field_format_id" domain="[('source', '=', 'contact')]" required="1" options="{'no_create': True}"/>
+                                    <field name="field_odoo_id" domain="[('model', '=', 'res.partner')]" required="1" options="{'no_create': True}"/>
+                                    <field name="field_odoo_internal_id" required="ttype == 'many2one'" invisible="ttype != 'many2one'" options="{'no_create': True}"/>
+                                    <field name="contact_field_id" invisible="1"/>
+                                    <field name="relation" invisible="1"/>
+                                    <field name="ttype" invisible="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="l10n_co_exogenous_contact_field_action" model="ir.actions.act_window">
+        <field name="name">Campos de contacto</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">l10n_co.exogenous_contact_field</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Configure sus campos de contacto.
+            </p>
+        </field>
+    </record>
+
+</odoo>

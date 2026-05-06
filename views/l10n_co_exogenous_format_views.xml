@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="l10n_co_exogenous_format_view_search" model="ir.ui.view">
+        <field name="name">l10n.co.exogenous.format.view.search</field>
+        <field name="model">l10n_co.exogenous_format</field>
+        <field name="arch" type="xml">
+            <search string="Buscar formato">
+                <field name="name"/>
+                <field name="code"/>
+                <filter string="Archivado" name="inactive" domain="[('active','=', False)]"/>
+                <filter string="¿Usa rango de fechas?" name="is_it_with_date_range" domain="[('is_it_with_date_range','=', True)]"/>
+                <filter string="¿Aplica conceptos?" name="apply_concepts" domain="[('apply_concepts','=', True)]"/>
+                <filter string="¿Aplica cuantías menores?" name="applying_smaller_amounts" domain="[('applying_smaller_amounts','=', True)]"/>
+                <group expand="1" string="Agrupar por">
+                    <filter string="Compañía" name="company_id" context="{'group_by': 'company_id'}" groups="base.group_multi_company"/>
+                    <filter string="Tabla de tipos de documento" name="document_type_table_id" context="{'group_by': 'document_type_table_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="l10n_co_exogenous_format_view_form" model="ir.ui.view">
+        <field name="name">l10n.co.exogenous.format.view.form</field>
+        <field name="model">l10n_co.exogenous_format</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Formato" create="false" delete="false">
+                <sheet>
+                    <div name="button_box" class="oe_button_box"/>
+                    <widget name="web_ribbon" title="Archivado" bg_color="bg-danger" invisible="active == True"/>
+                    <div class="oe_title" name="l10n_co_exogenous_format_title">
+                        <label for="code" id="l10n_co_exogenous_format_title"/>
+                        <h1>
+                            <field name="code" class="d-block" required="1"/>
+                            <field name="active" invisible="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group name="info_left">
+                            <field name="version"/>
+                            <field name="appendix"/>
+                        </group>
+                        <group name="info_right">
+                            <field name="document_type_table_id" options="{'no_create': True}"/>
+                            <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group name="info_left">
+                            <field name="applying_smaller_amounts"/>
+                            <field name="is_it_with_date_range"/>
+                            <field name="apply_concepts"/>
+                        </group>
+                        <group name="info_right">
+                            <field name="company_currency_id" invisible="1"/>
+                            <field name="smaller_ammounts" invisible="applying_smaller_amounts == False"/>
+                        </group>
+                    </group>
+                    <group name="group_name" colspan="4">
+                        <field name="name" colspan="2" required="1"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="l10n_co_exogenous_format_view_tree" model="ir.ui.view">
+        <field name="name">l10n.co.exogenous.format.view.tree</field>
+        <field name="model">l10n_co.exogenous_format</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Formatos" create="false" delete="false">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="version"/>
+                <field name="appendix"/>
+                <field name="document_type_table_id" optional="hide"/>
+                <field name="is_it_with_date_range" optional="hide"/>
+                <field name="apply_concepts" optional="hide"/>
+                <field name="applying_smaller_amounts" optional="hide"/>
+                <field name="smaller_ammounts" optional="hide"/>
+                <field name="company_id" groups="base.group_multi_company" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="l10n_co_exogenous_format_action" model="ir.actions.act_window">
+        <field name="name">Formatos</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">l10n_co.exogenous_format</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cree sus formatos aquí.
+            </p>
+        </field>
+    </record>
+
+</odoo>

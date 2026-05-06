@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="l10n_co_exogenous_document_type_civil_registration" model="l10n_co.exogenous_document_type">
+            <field name="name">Registro civil de nacimiento</field>
+            <field name="type_document_ids" eval="[(6, 0, [ref('l10n_co.civil_registration')])]"/>
+            <field name="active" eval="True"/>
+            <field name="code">11</field>
+            <field name="document_type_table_ids" eval="[(4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_document_type_table_one')), (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_document_type_table_two'))]"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_document_type_id_card" model="l10n_co.exogenous_document_type">
+            <field name="name">Tarjeta de identidad</field>
+            <field name="type_document_ids" eval="[(6, 0, [ref('l10n_co.id_card')])]"/>
+            <field name="active" eval="True"/>
+            <field name="code">12</field>
+            <field name="document_type_table_ids" eval="[(4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_document_type_table_one')), (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_document_type_table_two'))]"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_document_type_national_citizen_id" model="l10n_co.exogenous_document_type">
+            <field name="name">Cédula de ciudadanía</field>
+            <field name="type_document_ids" eval="[(6, 0, [ref('l10n_co.national_citizen_id')])]"/>
+            <field name="active" eval="True"/>
+            <field name="code">13</field>
+            <field name="document_type_table_ids" eval="[(4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_document_type_table_one')), (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_document_type_table_two'))]"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_document_type_foreign_colombian_card" model="l10n_co.exogenous_document_type">
+            <field name="name">Tarjeta de extranjería</field>
+            <field name="type_document_ids" eval="[(6, 0, [ref('l10n_co.foreign_colombian_card')])]"/>
+            <field name="active" eval="True"/>
+            <field name="code">21</field>
+            <field name="document_type_table_ids" eval="[(4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_document_type_table_one')), (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_document_type_table_two'))]"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_document_type_foreign_resident_card" model="l10n_co.exogenous_document_type">
+            <field name="name">Cédula de extranjería</field>
+            <field name="type_document_ids" eval="[(6, 0, [ref('l10n_co.foreign_resident_card')])]"/>
+            <field name="active" eval="True"/>
+            <field name="code">22</field>
+            <field name="document_type_table_ids" eval="[(4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_document_type_table_one')), (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_document_type_table_two'))]"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_document_type_rut" model="l10n_co.exogenous_document_type">
+            <field name="name">NIT</field>
+            <field name="type_document_ids" eval="[(6, 0, [ref('l10n_co.rut')])]"/>
+            <field name="active" eval="True"/>
+            <field name="code">31</field>
+            <field name="document_type_table_ids" eval="[(4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_document_type_table_one')), (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_document_type_table_two'))]"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_document_type_passport" model="l10n_co.exogenous_document_type">
+            <field name="name">Pasaporte</field>
+            <field name="active" eval="True"/>
+            <field name="code">41</field>
+            <field name="document_type_table_ids" eval="[(4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_document_type_table_one')), (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_document_type_table_two'))]"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_document_type_type_of_foreign_document" model="l10n_co.exogenous_document_type">
+            <field name="name">Tipo de documento extranjero</field>
+            <field name="active" eval="True"/>
+            <field name="code">42</field>
+            <field name="document_type_table_ids" eval="[(4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_document_type_table_one')), (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_document_type_table_two'))]"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_document_type_special_permit_to_stay" model="l10n_co.exogenous_document_type">
+            <field name="name">Permiso Especial de Permanencia</field>
+            <field name="active" eval="True"/>
+            <field name="code">47</field>
+            <field name="document_type_table_ids" eval="[(4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_document_type_table_one')), (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_document_type_table_two'))]"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_document_type_temporary_protection_permit" model="l10n_co.exogenous_document_type">
+            <field name="name">Permiso por Protección Temporal</field>
+            <field name="active" eval="True"/>
+            <field name="code">48</field>
+            <field name="document_type_table_ids" eval="[(4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_document_type_table_one')), (4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_document_type_table_two'))]"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <record id="l10n_co_exogenous_document_type_without_identification" model="l10n_co.exogenous_document_type">
+            <field name="name">Sin identificación del exterior o para uso definido por la DIAN</field>
+            <field name="active" eval="True"/>
+            <field name="code">43</field>
+            <field name="document_type_table_ids" eval="[(4, ref('l10n_co_exogenous_information_reporting.l10n_co_exogenous_document_type_table_one'))]"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+    </data>
+</odoo>

@@ -2,7 +2,7 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 {
     'name' : 'Información Exógena Colombia',
-    'version' : '17.0.1.3',
+    'version' : '17.0.1.4',
     'summary': 'Este módulo permite la configuración para generar los reportes de información exógena de la DIAN, anteriormente conocidos como medios magnéticos.',
     'sequence': 10,
     'category': 'Accounting/Localizations/Account Reports',

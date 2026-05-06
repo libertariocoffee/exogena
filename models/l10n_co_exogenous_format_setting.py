@@ -1279,6 +1279,27 @@ class L10nCoExogenousFormatSetting(models.Model):
             return result.rename(columns=self._get_fields_odoo_and_format(fields_contact))
         return result
 
+    def _notify_report_progress(self, title, message, ntype='warning', immediate=False):
+        """Push a toast notification to the current user about the report generation.
+
+        Cuando ``immediate=True`` se usa un cursor independiente que hace ``commit``
+        al salir, de modo que el ``NOTIFY`` del bus se dispara antes de que termine
+        la transacción del reporte; sin esto la notificación de "inicio" solo
+        llegaría al navegador al final, junto con la de "fin".
+        """
+        payload = {
+            'type': ntype,
+            'title': title,
+            'message': message,
+            'sticky': False,
+        }
+        target = self.env.user.partner_id
+        if immediate:
+            with self.pool.cursor() as cr:
+                self.env(cr=cr)['bus.bus']._sendone(target, 'simple_notification', payload)
+        else:
+            self.env['bus.bus']._sendone(target, 'simple_notification', payload)
+
     def generate_and_download_report(self):
         """Generate and download exogenous information report.
 
@@ -1339,6 +1360,19 @@ class L10nCoExogenousFormatSetting(models.Model):
 
         # Validate date ranges (only when generating report)
         self._check_dates()
+
+        # Avisar al usuario que la generación arrancó. Va por un cursor aparte
+        # para que el bus se dispare ya, no al cerrar la transacción larga.
+        self._notify_report_progress(
+            title=_("Generando reporte exógeno"),
+            message=_(
+                "Se inició la generación del reporte %s. Esto puede tardar varios "
+                "minutos según el volumen de información.",
+                self.format_id.code,
+            ),
+            ntype='warning',
+            immediate=True,
+        )
 
         # Retrieve format fields
         format_fields = self.env['l10n_co.exogenous_format_field'].search(
@@ -1612,5 +1646,15 @@ class L10nCoExogenousFormatSetting(models.Model):
         file_name = f"exogena_{self.format_id.code}_{datetime.now().strftime(DEFAULT_SERVER_DATETIME_FORMAT)}"
         self.binary_file = base64.b64encode(output.getvalue())
         self.binary_file_name = f"{file_name}.xlsx"
+
+        self._notify_report_progress(
+            title=_("Reporte exógeno generado"),
+            message=_(
+                "El reporte %s se generó correctamente. Descárguelo desde el "
+                "campo de archivo en el formulario.",
+                self.format_id.code,
+            ),
+            ntype='success',
+        )
 
 
